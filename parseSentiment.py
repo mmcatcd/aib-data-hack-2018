@@ -12,7 +12,7 @@ emoji_pattern = re.compile("["
         u"@USER"
                            "]+", flags=re.UNICODE)
 
-with open('dataset2.csv',encoding='utf8',errors = 'ignore') as csv_file:
+with open('dataset2_interim_eval.csv',encoding='utf8',errors = 'ignore') as csv_file:
     csv_reader = csv.reader(csv_file,delimiter=',')
     line_count = 0
     for row in csv_reader:
@@ -27,5 +27,3 @@ cleaned_data = open('cleaned_data.csv','w')
 with cleaned_data:
     writer = csv.writer(cleaned_data)
     writer.writerows(list)
-# Index 0 represents the columns names.
-print(list[601])
