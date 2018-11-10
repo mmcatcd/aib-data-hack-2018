@@ -22,7 +22,10 @@ with open('cleaned_data.csv',encoding='utf8',errors = 'ignore') as csv_file:
             row[1] = 'label'
         if line_count!=0:
             value = sid.polarity_scores(row[1])
-            print(value)
+            if value['compound'] > 0:
+                print('1')
+            else:
+                print('0')
             #row[1] = value
 
         list.append(row)
