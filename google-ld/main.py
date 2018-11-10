@@ -13,6 +13,6 @@ def get_sentiment(text):
   else:
     return 0
 
-sent = get_sentiment("that the 'feet' of my macbook just fell off")
+sent = get_sentiment("my hair is blue")
 print("Sentiment...")
 print(sent)
