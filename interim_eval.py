@@ -11,10 +11,14 @@ with open('cleaned_data.csv',encoding='utf8',errors = 'ignore') as csv_file:
             row[0] = 'id'
             row[1] = 'label'
         else:
-            if row[1]!='':
-                result = detect(row[1])
+            if row[1]!='' or row[1]!= ' ':
+                try:
+                   result = detect(row[1])
+                except:
+                   row[1] ='1'
                 if result in lang:
                     key_code = lang[result]
+                    print(row[1])
                     print(key_code)
                     row[1] = key_code
                 else:

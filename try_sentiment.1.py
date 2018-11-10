@@ -7,10 +7,6 @@ nltk.download('vader_lexicon')
 
 sid = SentimentIntensityAnalyzer()
 
-def clean(text):
-  return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", text).split())
-
-
 list = []
 with open('cleaned_data.csv',encoding='utf8',errors = 'ignore') as csv_file:
     csv_reader = csv.reader(csv_file,delimiter=',')
@@ -21,7 +17,7 @@ with open('cleaned_data.csv',encoding='utf8',errors = 'ignore') as csv_file:
             row[1] = 'label'
         if line_count!=0:
             value = sid.polarity_scores(row[1])
-            if value['compound'] > 0:
+            if value['compound'] > 0.2:
                 row[1] = 1
             else:
                 row[1] = 0

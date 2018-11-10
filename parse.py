@@ -13,7 +13,7 @@ emoji_pattern = re.compile("["
         u"\U00010000-\U0010ffff"
                            "]+", flags=re.UNICODE)
 
-with open('dataset1_interim_eval.csv',encoding='utf8',errors = 'ignore') as csv_file:
+with open('dataset1_final_eval.csv',encoding='utf8',errors = 'ignore') as csv_file:
     csv_reader = csv.reader(csv_file,delimiter=',')
     line_count = 0
     for row in csv_reader:
