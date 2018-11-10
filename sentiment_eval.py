@@ -6,7 +6,7 @@ import pandas as pd
 
 data = pd.read_csv('cleaned_data.csv')
 
-input = data['text']
+input = data['text'].apply(lambda x:float(x))
 output = data['sentiment']
 
 input = input.values.reshape(len(input),1)
